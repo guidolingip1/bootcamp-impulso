@@ -27,7 +27,7 @@
 </details>
 
 <details>
-  <summary>[✔] Módulo II - Fundamentos Web com HTML e CSS</Summary>
+  <summary>[] Módulo II - Fundamentos Web com HTML e CSS</Summary>
   
   - [] Primeiros passos para desenvolvimento web
   - [] Introdução a criação de websites com HTML5 e CSS3
@@ -37,7 +37,7 @@
 </details>
 
 <details>
-  <summary>[✔] Módulo III - Dominando a Linguagem de Programação JavaScript</Summary>
+  <summary>[] Módulo III - Dominando a Linguagem de Programação JavaScript</Summary>
   
   - [] IDE Instalação e Configuração (Visual Studio Code)
   - [] Introdução ao JavaScript
@@ -57,7 +57,7 @@
 </details>
 
 <details>
-  <summary>[✔] Módulo IV - Front-end: Desenvolvimento Web com React</Summary>
+  <summary>[] Módulo IV - Front-end: Desenvolvimento Web com React</Summary>
   
   - [] Conhecendo os Principais Protocolos de Comunicação da Internet
   - [] Introdução ao ReactJS
@@ -70,7 +70,7 @@
 </details>
 
 <details>
-  <summary>[✔] Módulo V - Bancos de Dados Relacionais (SQL) e Não Relacionais (NoSQL)</Summary>
+  <summary>[] Módulo V - Bancos de Dados Relacionais (SQL) e Não Relacionais (NoSQL)</Summary>
   
   - [] Conceitos e melhores práticas com bancos de dados PostgreSQL
   - [] Introdução ao MongoDB e Bancos de Dados NoSQL
@@ -78,7 +78,7 @@
 </details>
 
 <details>
-  <summary>[✔] Módulo VI - Back-end: Criando API com Node.Js</Summary>
+  <summary>[] Módulo VI - Back-end: Criando API com Node.Js</Summary>
   
   - [] Instalando e Configurando seu Ambiente Node.js
   - [] Introdução ao Node.js com JavaScript
