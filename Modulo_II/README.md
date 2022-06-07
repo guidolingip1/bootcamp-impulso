@@ -21,4 +21,6 @@
 
 ## 🚀 Construindo a primeira aplicação
 
+.
+
 </details>
