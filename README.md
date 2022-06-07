@@ -18,11 +18,11 @@
 </details>
 
 <details>
-  <summary>[] Módulo I - Princípios de desenvolvimento de software</summary>
+  <summary>[✔] Módulo I - Princípios de desenvolvimento de software</summary>
   
   - [✔] Introdução à Programação e Pensamento Computacional
-  - [] Introdução ao Git e ao GitHub
-  - [] Criando seu Primeiro Repositório no GitHub Para Compartilhar Seu Progresso
+  - [✔] Introdução ao Git e ao GitHub
+  - [✔] Criando seu Primeiro Repositório no GitHub Para Compartilhar Seu Progresso
 
 </details>
 
