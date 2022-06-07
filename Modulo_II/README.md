@@ -66,18 +66,140 @@ No Brasil em 1988 a FAPESP, UFRJ e LNCC fizeram um acordo para trazer a internet
 
 ## 🚀 Como funciona a internet
 
+### O que são redes
+
+É uma forma de conectar computadores.
+
+### Backbone
+
+- Espinha dorsal
+- Costelas
+- Poucas
+- Espalhadas pelo mundo
+
+### Provedor de acesso
+
+Empresas telefonicas que contratam o Backbone e repassam a internet.
+
+### Provedor de serviço
+
+- Dial up
+- ADSL
+- Fibra Óptica
+- Rádio
+- Satélite
+- Móvel
+- P2P\* (Peer to peer): Comunicação direta entre dois dispositivos sem acesso a internet
+
+  ### Caminho inverso
+
+  - www
+  - DNS: Domain Name System
+  - IP: Internet Protocol
+  - Classes de Redes
+  - 127.0.0.1: Rede local
+
 ## 🚀 TCP/IP, portas, roteadores, switches e modems
+
+### TCP/IP e UDP
+
+- TCP: Transmission Control Protocol
+  - 4 Camadas
+  - Física: Placa de Rede ou Wireless
+  - Rede: IP
+  - Transporte: TCP/UDP
+  - Aplicação: HTTP
+- IP: Internet Protocol
+
+### TCP Vs UDP
+
+- UDP
+  - Rápido
+  - Não Confiável
+  - Livestream
+- TCP
+  - Voltado a conexão
+  - Handshake
+  - Integridade
+
+### Portas (Ports)
+
+Servem para um computador/servidor saber por onde estão chegando os dados.
+
+### Roteadores, Switches e Modems
+
+- Modem: MO-dulator, DEM-odulator, Hardware que converte dados em um formato que consiga ser enviado de um computador para outro.
+- Roteador: Distribui internet de um ou mais dispositivos para uma Rede
+- Switch: Distribui internet de um ou mais dispositivos para uma Rede, porém este é mais confiável, normalmente se utiliza em seções grandes.
 
 ## 🚀 Celular, internet e outros dispositivos
 
-## 🚀 Browser, sites, aplicativos e webserver
+### Dados Móveis
+
+- SMS: Mensagem de texto
+- MMS: Mensagem de texto e audio/video.
+- 1G: KBPS
+- 2G: 97 KBPS
+- 3G: 7MBP
+- 4G: 22MBPS
+- 5G: 10GB
+
+### Wi-fi
+
+Internet sem fio.
+
+- Segurança
+  - WEP: Chaves de 64 e 128 bits
+  - WPA: Chave trocada periódicamente
+  - WPA2 (AES): + Segurança + Processamento, ele é mais lento porém mais seguro.
+
+### Bluetooth
+
+Faz uma conexão ponto a ponto, não depende da internet.
 
 ## 🚀 O que são Stacks
 
+- Pilhas de tecnologia
+- Conjunto de softwares necessários e suficientes para executar um aplicativo
+- Linguagens de programação
+- Ambientes e ferramentas de desenvolvimento
+  Exemplo: A minha stack é: HTML + CSS + JS + NodeJS
+
+### Definição de Front-end e Back-end
+
+- Front: Programadores que desenvolvem a frente do site.
+- Back: Desenvolvedores que criam a lógica do site.
+
 ## 🚀 LPs e termos
 
-## 🚀 Construindo a primeira aplicação
+### Principais Linguagens de programação
 
-.
-
-</details>
+- HTML
+- CSS
+- JS
+- PHP
+- .NET
+- ASP
+- Java
+- Ruby
+- Python
+- Perl
+- c/c++/c#
+  ### Termos Compuns
+  - 404: Erro quando uma página não existe
+  - Algoritmo: Sequencia de passos lógica para executar uma tarefa.
+  - ALT: Texto alternativo que aparece quando se passa o mouse sobre algo no HTML.
+  - API: Usada para fazer chamadas de dados.
+  - Aplicação
+  - Biblioteca/dll: Conjuto de ferramentas que nos permite realizar ações.
+  - Bootstrap: Framework JS para Front.
+  - Breakpoints: Pontos que usamos para debugar.
+  - Controle de versão: Softwares que controlam versões.
+  - Deploy: Pacotinho que mandamos para serem publicados.
+  - Design Responsivo: Um site que se adequa a qualquer tipo de tela
+  - DPI: Proporção de pontos na tela.
+  - Editor de texto: VSCODE ♥
+  - Estrutura de dados: Filas, arrays, number...
+  - Favicon: ícone do site.
+  - Fontes: Letras.
+  </details>
