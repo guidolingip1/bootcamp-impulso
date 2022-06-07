@@ -218,3 +218,62 @@ function mediaAluno(n1, n2) {
 ```
 
   </details>
+
+---
+
+# Introdução ao Git e ao GitHub
+
+### Entenda o que é Git e sua importância
+
+O Git é um sistema de controle de versões distribuido.
+
+### Navegação via command line interface e instalação
+
+<details>
+  <summary>👩‍💻 Windows</summary>
+
+- dir: lista arquivos de um diretório
+- cd: navega entre as pastas
+- cls: limpa o terminal do windows
+- mkdir: cria uma pasta com o nome passado "mkdir workspace"
+- rmdir: remove uma pasta
+- echo hello > hello.txt: cria um txt com o texto hello
+- del: deleta arquivos de uma pasta
+
+  </details>
+
+<details>
+  <summary>👩‍💻 Linux</summary>
+  
+- ls: lista arquivos de um diretório
+- cd: navega entre as pastas
+- clear: limpa o terminal do windows
+- mkdir: cria uma pasta com o nome passado "mkdir workspace"
+- rm -rf: 
+- echo hello > hello.txt: cria um txt com o texto hello
+- del: deleta um arquivo ou pasta
+  </details>
+
+### Entendo como o git funciona por baixo dos panos
+
+SHA - Secure Hash Algorithm, algoritmo de criptografia que gera 40 digitos únicos, serve para garantir que um arquivo não foi modificado, se uma vírgula mudar, o código SHA gerado será completamente diferente.
+
+### Objetos internos do git
+
+- Blobs: "arquivos"
+- Trees: Apontam para os blobs
+- Commits: Mensagem que se utiliza quando fazemos uma alteração, essa mensagem por sua vez tem seu próprio SHA.
+
+### Primeiros comandos com o Git
+
+- init: inicia um projeto git na pasta atual
+- git config --global: usado para setar configurações globais como email e senha
+- git add \*: adiciona todos os arquivos.
+- git commit -m "": usado para fazer os commits, autoexplicativo
+
+### Ciclo de vida dos arquivos no git
+
+- Untracked: Arquivo não está sendo monitorado pelo git
+- Unmodified: Arquivo não sofreu nenhuma alteração desde o último commit
+- Modified: Arquivo sofreu alteração
+- Staged: Arquivo que está pronto para o commit, após o commit o arquivo vira unmodified
