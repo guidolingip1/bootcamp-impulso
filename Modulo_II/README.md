@@ -367,3 +367,27 @@ Hoje em dia exitste uma semântica para isso
 | li    | List item                      |
 
 ---
+
+# 🚀 Posicionando elementos com Flexbox em CS
+
+---
+
+## Introdução ao Flexbox
+
+- Flex Container: Tag que envolve os items, é nela que aplicamos display flex, isso transforma os filhos diretos em flex items.
+  - display: Inicializador do container
+  - Direction: escolhe a direção do item
+  - align-items: alinha os items de acordo com o eixo do container
+  - align-content: alinha as linhas do container
+- flex-item: são os elementos filhos diretos do container
+
+  - flex-grow
+  - flex-basis
+  - flex-shrink
+  - flex
+  - order
+  - align-self
+
+## Fundamentos do Flexbox
+
+Esta parte do estudo foi prática.
