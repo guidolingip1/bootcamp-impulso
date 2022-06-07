@@ -4,7 +4,7 @@
 
 ## Meu andamento
 
-![10%](https://progress-bar.dev/10)
+![14%](https://progress-bar.dev/14)
 </br>
 
 <details>
