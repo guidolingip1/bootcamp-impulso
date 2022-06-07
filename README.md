@@ -4,7 +4,7 @@
 
 ## Meu andamento
 
-![18%](https://progress-bar.dev/18)
+![23%](https://progress-bar.dev/23)
 </br>
 
 <details>
@@ -27,12 +27,12 @@
 </details>
 
 <details>
-  <summary>[] Módulo II - Fundamentos Web com HTML e CSS</Summary>
+  <summary>[✔] Módulo II - Fundamentos Web com HTML e CSS</Summary>
   
   - [✔] Primeiros passos para desenvolvimento web
   - [✔] Introdução a criação de websites com HTML5 e CSS3
   - [✔] Posicionando elementos com Flexbox em CSS
-  - [] Recriando a página inicial do Instagram
+  - [✔] Recriando a página inicial do Instagram
 
 </details>
 
