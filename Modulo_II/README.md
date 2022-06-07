@@ -1,10 +1,8 @@
 # Módulo II - Fundamentos Web com HTML e CSS
 
+# 🚀 Primeiros passos para desenvolvimento web
+
 ---
-
-<details>
-
-<summary>🚀 Primeiros passos para desenvolvimento web</summary>
 
 ## 🚀 O que é internet
 
@@ -202,4 +200,9 @@ Faz uma conexão ponto a ponto, não depende da internet.
   - Estrutura de dados: Filas, arrays, number...
   - Favicon: ícone do site.
   - Fontes: Letras.
-  </details>
+
+# Introdução a criação de websites com HTML5 e CSS3
+
+---
+
+## Começo aqui
