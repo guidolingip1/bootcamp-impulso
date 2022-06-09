@@ -1,0 +1,54 @@
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #e8ebf3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(#414856, 0.05);
+
+  width: 450px;
+  min-height: 250px;
+  height: fit-content;
+  border-radius: 10px;
+}
+
+.input_e_botao {
+  margin-left: 60px;
+  margin-top: 60px;
+}
+
+ul {
+  list-style: none;
+  margin-left: 20px;
+}
+
+li {
+  width: 250px;
+  height: 30px;
+
+  font-size: 25px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serifs;
+  color: rgb(32, 130, 216);
+}
+
+#textoInput {
+  width: 250px;
+  height: 20px;
+}
+
+#botaoAdicionar {
+  height: 28px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+  margin-right: 24px;
+}
