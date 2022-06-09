@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background-color: rgb(107, 226, 177);
+}
+
+.buttons {
+  margin-top: 30px;
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#somar,
+#subtrair {
+  width: 25px;
+  height: 25px;
+  border-radius: 100px;
+  border: 0.5px solid white;
+}
