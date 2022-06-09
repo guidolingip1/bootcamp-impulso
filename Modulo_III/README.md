@@ -48,6 +48,13 @@ soma(3, 5);
 
 Aula prática
 
-## 🚀 Colocando em prática
+## 🚀 Mercado de Trabalho
 
-### Criando um contador
+### Frameworks e Bibliotecas
+
+- VueJS
+- Angular
+- React
+- jQuery
+
+# Sintaxe Básica em JavaScript
