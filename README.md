@@ -4,7 +4,7 @@
 
 ## Meu andamento
 
-![23%](https://progress-bar.dev/23)
+![28%](https://progress-bar.dev/28)
 </br>
 
 <details>
@@ -39,8 +39,8 @@
 <details>
   <summary>[] Módulo III - Dominando a Linguagem de Programação JavaScript</Summary>
   
-  - [] IDE Instalação e Configuração (Visual Studio Code)
-  - [] Introdução ao JavaScript
+  - [✔] IDE Instalação e Configuração (Visual Studio Code)
+  - [✔] Introdução ao JavaScript
   - [] Sintaxe Básica em JavaScript
   - [] Sintaxe e Operadores
   - [] Variáveis e Tipos
