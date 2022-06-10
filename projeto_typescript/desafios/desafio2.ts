@@ -24,8 +24,8 @@
 */
 
 enum Profissoes {
-  Atriz,
-  Padeiro,
+  Atriz = "Atriz",
+  Padeiro = "Pedreiro",
 }
 
 interface Pessoa {

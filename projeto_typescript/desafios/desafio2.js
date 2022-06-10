@@ -25,8 +25,8 @@
 */
 var Profissoes;
 (function (Profissoes) {
-    Profissoes[Profissoes["Atriz"] = 0] = "Atriz";
-    Profissoes[Profissoes["Padeiro"] = 1] = "Padeiro";
+    Profissoes["Atriz"] = "Atriz";
+    Profissoes["Padeiro"] = "Pedreiro";
 })(Profissoes || (Profissoes = {}));
 const pessoa1 = {
     nome: "Maria",
