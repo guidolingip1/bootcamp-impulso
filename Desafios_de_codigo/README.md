@@ -69,3 +69,57 @@ print(C);
 ```
 
 </details>
+
+<details>
+  <summary>[✔] 👌 Array Pares</Summary>
+
+```javascript
+var array = [2, 3, 5, 7, 11, 13, 18, 34];
+
+array.map((item) => {
+  if (item % 2 === 0) console.log(item);
+});
+```
+
+</details>
+
+<details>
+  <summary>[✔] 🍹 Réveillon de Copacabana</Summary>
+
+```javascript
+let T = parseInt(gets());
+let N;
+
+while (T != 0) {
+  for (let i = 1; i <= T; i++) {
+    N = parseInt(gets());
+    N % 2 === 0 ? print(N * 2 - 2) : print(N * 2 - 1);
+  }
+  T = parseInt(gets());
+}
+```
+
+</details>
+
+<details>
+  <summary>[✔] 🐉 Dragão Berrador World</Summary>
+
+```javascript
+var s = gets().split(" ");
+
+let n = parseInt(s[0]);
+let min = parseInt(s[1]);
+let max = parseInt(s[2]);
+
+let altura,
+  conta = 0;
+for (let x = 0; x < n; x++) {
+  altura = parseInt(gets());
+  if (altura >= min && altura <= max) {
+    conta++;
+  }
+}
+print(conta);
+```
+
+</details>
