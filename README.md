@@ -37,7 +37,7 @@
 </details>
 
 <details>
-  <summary>[] Módulo III - Dominando a Linguagem de Programação JavaScript</Summary>
+  <summary>[✔] Módulo III - Dominando a Linguagem de Programação JavaScript</Summary>
   
   - [✔] IDE Instalação e Configuração (Visual Studio Code)
   - [✔] Introdução ao JavaScript
@@ -47,12 +47,12 @@
   - [✔] Funções
   - [✔] Debugging e Error Handling
   - [✔] Desafios Iniciais Js - Impulso JavaScript Evolution
-  - [] Manipulando a D.O.M. com JavaScript
-  - [] Javascript Assíncrono
-  - [] Orientação a objetos
-  - [] Introdução ao TypeScript: Explorando Classes, Tipos e Interfaces
+  - [✔] Manipulando a D.O.M. com JavaScript
+  - [✔] Javascript Assíncrono
+  - [✔] Orientação a objetos
+  - [✔] Introdução ao TypeScript: Explorando Classes, Tipos e Interfaces
   - [✔] Desafios intermediários Js - Impulso JavaScript Evolution
-  - [] Introdução Prática ao TypeScript
+  - [✔] Introdução Prática ao TypeScript
 
 </details>
 
