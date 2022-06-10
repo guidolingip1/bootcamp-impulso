@@ -51,7 +51,7 @@
   - [] Javascript Assíncrono
   - [] Orientação a objetos
   - [] Introdução ao TypeScript: Explorando Classes, Tipos e Interfaces
-  - [] Desafios intermediários Js - Impulso JavaScript Evolution
+  - [✔] Desafios intermediários Js - Impulso JavaScript Evolution
   - [] Introdução Prática ao TypeScript
 
 </details>
