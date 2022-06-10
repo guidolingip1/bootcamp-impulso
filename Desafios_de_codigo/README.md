@@ -13,7 +13,7 @@ while (n != -1) {
 </details>
 
 <details>
-  <summary>[] 🛩 Pedra, Papel, Ataque Aéreo</Summary>
+  <summary>[✔] 🛩 Pedra, Papel, Ataque Aéreo</Summary>
 
 ```javascript
 let N = parseInt(gets());
