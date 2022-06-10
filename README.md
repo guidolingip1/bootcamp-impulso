@@ -41,12 +41,12 @@
   
   - [✔] IDE Instalação e Configuração (Visual Studio Code)
   - [✔] Introdução ao JavaScript
-  - [] Sintaxe Básica em JavaScript
-  - [] Sintaxe e Operadores
-  - [] Variáveis e Tipos
-  - [] Funções
-  - [] Debugging e Error Handling
-  - [] Desafios Iniciais Js - Impulso JavaScript Evolution
+  - [✔] Sintaxe Básica em JavaScript
+  - [✔] Sintaxe e Operadores
+  - [✔] Variáveis e Tipos
+  - [✔] Funções
+  - [✔] Debugging e Error Handling
+  - [✔] Desafios Iniciais Js - Impulso JavaScript Evolution
   - [] Manipulando a D.O.M. com JavaScript
   - [] Javascript Assíncrono
   - [] Orientação a objetos
