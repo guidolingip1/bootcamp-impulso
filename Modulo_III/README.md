@@ -223,3 +223,278 @@ const MeuErro = new Error("Mensagem Inválida");
 
 throw MeuErro;
 ```
+
+## 🚀 Manipulando a D.O.M com JavaScript
+
+### O que é DOM
+
+DOM significa Document Object Model, o DOM é um padrão de como acessar e modificar os elementos HTML de uma página.
+
+### O que é BOM
+
+BOM significa Browser Object Model
+é tudo o que está dentro do objeto Window.
+
+### Métodos
+
+```javascript
+document.getElementById("titulo");
+document.getElementByTagName("li");
+document.getElementByClassName("textos");
+document.querySelectorAll(".primeira-classe .segunda-classe");
+document.querySelectorAll("li .opcao");
+document.createElement(element);
+document.removeChild(element);
+document.appendChild(element);
+document.replaceChild(element);
+```
+
+### Trabalhando com estilos
+
+```javascript
+meuElemento.classList.add("novo-estilo");
+meuElemento.classList.remove("classe");
+meuElemento.classList.toggle("dark-mode");
+
+// acessando o css diretamente
+document.getElementsByTagName("p").style.color = "Blue";
+```
+
+### Eventos
+
+- mouseover
+- mouseout
+- click
+- dbclick
+- change
+- load
+- addEventListener
+
+## 🚀 JavaScript Assíncrono
+
+- Síncrono: Os processos esperam uns pelos outras.
+- Assíncrono: Os processos podem ocorrer ao mesmo tempo.
+
+### Promises
+
+Objeto de processamento assíncrono, pode ser resolvido ou rejeitado.
+
+```javascript
+async function resolvePromise() {
+  const myPromise = new Promise((resolve, reject) => {
+    window.setTimeout(() => {
+      resolve("Resolvida");
+    }, 2000);
+  });
+
+  await myPromise
+    .then((result) => result + " Passando pelo then")
+    .then((result) => result + " e agora acabou")
+    .catch((err) => console.log(err));
+  return resolved;
+}
+```
+
+### Consumindo APIs
+
+API significa Application Programming Interface, uma API é uma forma de intermediar os resultados do back-end.
+
+- API: Application Programming Interface
+- JSON: JavaScript Object Notation
+- fetch: Utilizado para consumir APIs
+
+## 🚀 Orientação a Objetos
+
+### Paradigmas de programação
+
+- Imperativo: Foca em como vamos resolver os problemas.
+- Delcarativo: Foca em o que vamos fazer.
+
+Pilares
+
+- Abstração
+- Herança
+- Encapsulamento
+- Polimorfismo
+
+### Protótipos e classes
+
+JavaScript não possui classes nativamente, todas as classes são objetos e a herança se dá por protótipos.
+
+```javascript
+class Meal {
+  constructor(food) {
+    this.food = food;
+  }
+
+  get type() {
+    return this._type;
+  }
+
+  set type(val) {
+    this._type = val.toUpperCase();
+  }
+  eat() {
+    return "😊 ";
+  }
+}
+```
+
+### Atividade prática
+
+```javascript
+class ContaBancaria {
+  constructor(agencia, numero, tipo, saldo) {
+    this.agencia = agencia;
+    this.numero = numero;
+    this.tipo = tipo;
+    this._saldo = saldo;
+  }
+
+  get saldo() {
+    return this._saldo;
+  }
+
+  set saldo(valor) {
+    this._saldo = valor;
+  }
+
+  sacar(valor) {
+    if (valor > this._saldo) {
+      return "Operacao negada";
+    }
+    this._saldo = this._saldo - valor;
+    return this._saldo;
+  }
+
+  depositar(valor) {
+    this._saldo = this._saldo + valor;
+    return this._saldo;
+  }
+}
+
+class ContaCorrente {
+  constructor(agencia, numero, saldo) {
+    super(agencia, numero, saldo);
+    this.tipo = "corrente";
+    this._cartaoCredito = cartaoCredito;
+  }
+
+  get cartaoCredito() {
+    return this._cartaoCredito;
+  }
+
+  set cartaoCredito(valor) {
+    this._cartaoCredito = valor;
+  }
+}
+
+class ContaPoupanca {
+  constructor(agencia, numero, saldo) {
+    super(agencia, numero, saldo);
+    this.tipo = "poupanca";
+  }
+}
+
+class ContaUniversitaria {
+  constructor(agencia, numero, saldo) {
+    super(agencia, numero, saldo);
+    this.tipo = "universitaria";
+  }
+
+  sacar(valor) {
+    if (valor > 500) {
+      return "Operacao Negada!";
+    }
+
+    this.saldo = this._saldo - valor;
+  }
+}
+```
+
+## 🚀 Introdução ao Typescript
+
+### Vantagens e desvantagens do TypeScript
+
+Faz com que o desenvolvedor estruture seu código de forma a minimizar qualque tipo de erro.
+
+- Vantagem: Minimiza erros.
+- Desvantagem: Demora um pouco a mais para desenvolver.
+
+```typescript
+// Função
+function soma(a: number, b: number) {
+  return a + b;
+}
+
+soma(1, 2);
+
+// Interface
+interface IAnimal {
+  nome: string;
+  tipo: 'terrestre' | 'aquatico';
+}
+
+interface IFelino extends IAnimal {
+  visaoNoturna: boolean;
+}
+
+interface ICanino extends IAnimal {
+  porte: 'pequeno'| 'medio'|'grande";
+}
+
+const animal: IAnimal = {
+  nome: 'Elefante',
+  tipo: 'aquatico';
+}
+
+const felino: IFelino = {
+  nome: 'Leao';
+  tipo: 'Terrestre';
+  visaoNoturna: true;
+}
+
+// Types: Normalmente são usados para unir interfaces
+type IDomestico = IFelino | ICanino;
+```
+
+### Tratando a tag input
+
+```typescript
+const input = document.getElementById("input") as HTMLInputElement;
+
+input.addEventListener("input", (event) => {
+  const i = event.currentTarget as HTMLInputElement;
+  console.log(i.value);
+});
+```
+
+### O que são generic types
+
+```typescript
+function adicionaApendiceALista<T>(array: any[], value: T) {
+  return array.map((item) => item + value);
+}
+
+console.log(adicionaApendiceALista([1, 2, 3], 1));
+console.log(adicionaApendiceALista(["1", "2", "3"], "1"));
+```
+
+### Desenvolvimento de condicionais a partir de parâmetros
+
+```typescript
+interface IUsuario {
+  id: string;
+  email: string;
+}
+
+interface IAdmin extends IUsuario {
+  cargo: "gerente" | "coordenador" | "supervisor";
+}
+
+function redirecione(usuario: IUsuario | IAdmin) {
+  if ("cargo" in usuario) {
+    // redirecione..
+  }
+}
+```
