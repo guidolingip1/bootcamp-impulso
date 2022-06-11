@@ -1,31 +1,19 @@
 let apiKey: string = "5703b8e437fb5317da32c17cc2116716";
 let requestToken: string;
-let username: string = "guidolingip";
-let password: string = "32173187";
 let sessionId: string;
-let listId: string = "7101979";
-let id: string;
-
+let listId: string;
+let accountId: string;
+let accessToken: string;
 let listaDeFilmes: Object;
 
 /** REFERENCIAS */
-let loginButton = document.getElementById(
-  "login-button"
-) as HTMLButtonElement | null;
+let loginButton = document.getElementById("login-button") as HTMLButtonElement | null;
 let searchButton = document.getElementById("search-button");
-let searchContainer = document.getElementById(
-  "search-container"
-) as HTMLElement;
+let searchContainer = document.getElementById("search-container") as HTMLElement;
 let searchBar = document.getElementById("search") as HTMLInputElement;
-let logoutButton = document.getElementById(
-  "logout-button"
-) as HTMLButtonElement | null;
-let myListsButton = document.getElementById(
-  "myLists-button"
-) as HTMLButtonElement | null;
-let validateButton = document.getElementById(
-  "validate-button"
-) as HTMLButtonElement;
+let logoutButton = document.getElementById("logout-button") as HTMLButtonElement | null;
+let myListsButton = document.getElementById("myLists-button") as HTMLButtonElement | null;
+let validateButton = document.getElementById("validate-button") as HTMLButtonElement;
 /************************************************/
 
 validateButton?.addEventListener("click", async () => {
@@ -35,6 +23,7 @@ validateButton?.addEventListener("click", async () => {
 
 loginButton?.addEventListener("click", async () => {
   await criarSessao();
+  await geraAccessToken();
   await pegaId();
 });
 
@@ -76,26 +65,17 @@ async function pegaId() {
     }
   );
   const json = await req.json();
-  id = JSON.stringify(json.id);
-}
-
-function preencherSenha() {
-  password = (document.getElementById("senha") as HTMLInputElement).value;
-  validateLoginButton();
-}
-
-function preencherLogin() {
-  username = (document.getElementById("login") as HTMLInputElement).value;
-  validateLoginButton();
+  accountId = JSON.stringify(json.id);
+  console.log(accountId);
 }
 
 function preencherApi() {
-  apiKey = (document.getElementById("api-key") as HTMLInputElement).value;
+  //apiKey = (document.getElementById("api-key") as HTMLInputElement).value;
   validateLoginButton();
 }
 
 function validateLoginButton() {
-  if (password && username && apiKey) {
+  if (apiKey) {
     if (loginButton != null) {
       loginButton.disabled = false;
     }
@@ -106,6 +86,7 @@ function validateLoginButton() {
   }
 }
 
+/** Authentication */
 async function criarRequestToken() {
   const req = await fetch(
     `https://api.themoviedb.org/3/authentication/token/new?api_key=${apiKey}`,
@@ -124,6 +105,23 @@ async function criarRequestToken() {
 
 async function aprovaToken() {
   window.open("https://www.themoviedb.org/authenticate/" + requestToken);
+}
+
+async function geraAccessToken() {
+  const req = await fetch(`https://api.themoviedb.org/4/auth/access_token`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${accessToken}`,
+    },
+    body: JSON.stringify({
+      request_token: requestToken,
+    }),
+  });
+  const json = await req.json();
+  accessToken = json.access_token;
+  console.log("Access_token: " + json.access_token);
 }
 
 async function criarSessao() {
@@ -167,19 +165,18 @@ async function adicionarFilmeNaLista(filmeId, listaId) {
 }
 
 async function pegarListas() {
-  let listas = await fetch(
-    `https://api.themoviedb.org/4/account/${id}/lists?api_key=${apiKey}&page=1`,
+  const req = await fetch(
+    `https://api.themoviedb.org/3/account/1/lists?api_key=${apiKey}&session_id=${sessionId}`,
     {
       method: "GET",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        authorization: "Bearer " + requestToken,
       },
     }
   );
-  const json = await listas.json();
-  return json;
+  const json = await req.json();
+  console.log("Minhas listas: " + JSON.stringify(json));
 }
 
 async function pegarLista() {

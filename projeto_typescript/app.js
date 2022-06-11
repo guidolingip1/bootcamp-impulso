@@ -10,11 +10,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 let apiKey = "5703b8e437fb5317da32c17cc2116716";
 let requestToken;
-let username = "guidolingip";
-let password = "32173187";
 let sessionId;
-let listId = "7101979";
-let id;
+let listId;
+let accountId;
+let accessToken;
 let listaDeFilmes;
 /** REFERENCIAS */
 let loginButton = document.getElementById("login-button");
@@ -31,6 +30,7 @@ validateButton === null || validateButton === void 0 ? void 0 : validateButton.a
 }));
 loginButton === null || loginButton === void 0 ? void 0 : loginButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
     yield criarSessao();
+    yield geraAccessToken();
     yield pegaId();
 }));
 searchButton === null || searchButton === void 0 ? void 0 : searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
@@ -66,23 +66,16 @@ function pegaId() {
             },
         });
         const json = yield req.json();
-        id = JSON.stringify(json.id);
+        accountId = JSON.stringify(json.id);
+        console.log(accountId);
     });
 }
-function preencherSenha() {
-    password = document.getElementById("senha").value;
-    validateLoginButton();
-}
-function preencherLogin() {
-    username = document.getElementById("login").value;
-    validateLoginButton();
-}
 function preencherApi() {
-    apiKey = document.getElementById("api-key").value;
+    //apiKey = (document.getElementById("api-key") as HTMLInputElement).value;
     validateLoginButton();
 }
 function validateLoginButton() {
-    if (password && username && apiKey) {
+    if (apiKey) {
         if (loginButton != null) {
             loginButton.disabled = false;
         }
@@ -93,6 +86,7 @@ function validateLoginButton() {
         }
     }
 }
+/** Authentication */
 function criarRequestToken() {
     return __awaiter(this, void 0, void 0, function* () {
         const req = yield fetch(`https://api.themoviedb.org/3/authentication/token/new?api_key=${apiKey}`, {
@@ -110,6 +104,24 @@ function criarRequestToken() {
 function aprovaToken() {
     return __awaiter(this, void 0, void 0, function* () {
         window.open("https://www.themoviedb.org/authenticate/" + requestToken);
+    });
+}
+function geraAccessToken() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const req = yield fetch(`https://api.themoviedb.org/4/auth/access_token`, {
+            method: "POST",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${accessToken}`,
+            },
+            body: JSON.stringify({
+                request_token: requestToken,
+            }),
+        });
+        const json = yield req.json();
+        accessToken = json.access_token;
+        console.log("Access_token: " + json.access_token);
     });
 }
 function criarSessao() {
@@ -151,16 +163,15 @@ function adicionarFilmeNaLista(filmeId, listaId) {
 }
 function pegarListas() {
     return __awaiter(this, void 0, void 0, function* () {
-        let listas = yield fetch(`https://api.themoviedb.org/4/account/${id}/lists?api_key=${apiKey}&page=1`, {
+        const req = yield fetch(`https://api.themoviedb.org/3/account/1/lists?api_key=${apiKey}&session_id=${sessionId}`, {
             method: "GET",
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json",
-                authorization: "Bearer " + requestToken,
             },
         });
-        const json = yield listas.json();
-        return json;
+        const json = yield req.json();
+        console.log("Minhas listas: " + JSON.stringify(json));
     });
 }
 function pegarLista() {
