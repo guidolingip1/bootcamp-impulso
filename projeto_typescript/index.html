@@ -5,25 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="app.js" defer></script>
+    <script src="desafio4.js" defer></script>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="container">
       <div class="login_area">
         <h1 id="login-text">Login</h1>
-        <input
-          id="login"
-          placeholder="Login"
-          onchange="preencherLogin(event)"
-        />
-        <input
-          id="senha"
-          placeholder="Senha"
-          type="password"
-          onchange="preencherSenha(event)"
-        />
-        <input id="api-key" placeholder="Api Key" onchange="preencherApi()" />
+        <input id="api-key" placeholder="Api Key" onchange="preencherApi(event)" />
         <button id="validate-button">Validar Token</button>
         <button id="login-button" disabled>Login</button>
         <button id="myLists-button">Minhas Listas</button>
