@@ -4,9 +4,11 @@ let username: string = "guidolingip";
 let password: string = "32173187";
 let sessionId: string;
 let listId: string = "7101979";
+let id: string;
 
 let listaDeFilmes: Object;
 
+/** REFERENCIAS */
 let loginButton = document.getElementById(
   "login-button"
 ) as HTMLButtonElement | null;
@@ -21,12 +23,19 @@ let logoutButton = document.getElementById(
 let myListsButton = document.getElementById(
   "myLists-button"
 ) as HTMLButtonElement | null;
+let validateButton = document.getElementById(
+  "validate-button"
+) as HTMLButtonElement;
+/************************************************/
+
+validateButton?.addEventListener("click", async () => {
+  await criarRequestToken();
+  await aprovaToken();
+});
 
 loginButton?.addEventListener("click", async () => {
-  await criarRequestToken();
   await criarSessao();
-  console.log(sessionId);
-  await logar();
+  await pegaId();
 });
 
 searchButton?.addEventListener("click", async () => {
@@ -56,9 +65,22 @@ myListsButton?.addEventListener("click", async () => {
   pegarListas();
 });
 
+async function pegaId() {
+  const req = await fetch(
+    `https://api.themoviedb.org/3/account?api_key=${apiKey}&session_id=${sessionId}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  const json = await req.json();
+  id = JSON.stringify(json.id);
+}
+
 function preencherSenha() {
   password = (document.getElementById("senha") as HTMLInputElement).value;
-  console.log();
   validateLoginButton();
 }
 
@@ -97,60 +119,40 @@ async function criarRequestToken() {
   );
   const json = await req.json();
   requestToken = json.request_token;
+  console.log("Minha request Token: " + requestToken);
+}
+
+async function aprovaToken() {
+  window.open("https://www.themoviedb.org/authenticate/" + requestToken);
 }
 
 async function criarSessao() {
-  location.href = `https://www.themoviedb.org/authenticate/${requestToken}?redirect_to=http://localhost:3000`;
   const req = await fetch(
-    `https://api.themoviedb.org/3/authentication/session/new?api_key=${apiKey}`,
+    `https://api.themoviedb.org/3/authentication/session/new?api_key=${apiKey}&request_token=${requestToken}`,
     {
-      method: "post",
+      method: "GET",
       headers: {
-        Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        request_token: requestToken,
-      }),
     }
   );
   const json = await req.json();
-  console.log("ESSE JSON AQUI: " + json.session_id);
+  sessionId = json.session_id;
+  console.log("Minha session: " + json.session_id);
 }
 
-async function logar() {
-  console.log("Minha request token chega aqui?: " + requestToken);
-  fetch(
-    `https://api.themoviedb.org/3/authentication/token/validate_with_login?api_key=${apiKey}`,
+async function criarLista(nomeDaLista: string, descricao: string) {
+  const req = await fetch(
+    `https://api.themoviedb.org/3/list?api_key=${apiKey}&session_id=${sessionId}`,
     {
-      method: "post",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-
+      method: "POST",
       body: JSON.stringify({
-        username: { username },
-        password: { password },
-        request_token: { requestToken },
+        name: nomeDaLista,
+        description: descricao,
+        language: "pt-br",
       }),
     }
-  ).then((response) => {
-    console.log(response);
-  });
-}
-
-async function criarLista(nomeDaLista, descricao) {
-  let result = await HttpClient.get({
-    url: `https://api.themoviedb.org/3/list?api_key=${apiKey}&session_id=${sessionId}`,
-    method: "POST",
-    body: {
-      name: nomeDaLista,
-      description: descricao,
-      language: "pt-br",
-    },
-  });
-  console.log(result);
+  );
 }
 
 async function adicionarFilmeNaLista(filmeId, listaId) {
@@ -166,12 +168,13 @@ async function adicionarFilmeNaLista(filmeId, listaId) {
 
 async function pegarListas() {
   let listas = await fetch(
-    `https://api.themoviedb.org/3/account/${sessionId}/lists?api_key=${apiKey}`,
+    `https://api.themoviedb.org/4/account/${id}/lists?api_key=${apiKey}&page=1`,
     {
       method: "GET",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
+        authorization: "Bearer " + requestToken,
       },
     }
   );

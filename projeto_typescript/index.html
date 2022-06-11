@@ -6,18 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="app.js" defer></script>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div style="display: flex">
-      <div
-        style="
-          display: flex;
-          width: 300px;
-          height: 100px;
-          justify-content: space-between;
-          flex-direction: column;
-        "
-      >
+    <div class="container">
+      <div class="login_area">
+        <h1 id="login-text">Login</h1>
         <input
           id="login"
           placeholder="Login"
@@ -30,12 +24,14 @@
           onchange="preencherSenha(event)"
         />
         <input id="api-key" placeholder="Api Key" onchange="preencherApi()" />
+        <button id="validate-button">Validar Token</button>
         <button id="login-button" disabled>Login</button>
         <button id="myLists-button">Minhas Listas</button>
       </div>
-      <div id="search-container" style="margin-left: 20px">
-        <input id="search" placeholder="Escreva..." />
-        <button id="search-button">Pesquisar Filme</button>
+      <div id="search-container">
+        <input id="search" placeholder="Pesquise um filme" />
+        <button id="search-button">Pesquisar</button>
+        <label for="username" id="username-label"></label>
       </div>
     </div>
   </body>
