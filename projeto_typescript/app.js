@@ -64,14 +64,16 @@ searchButton === null || searchButton === void 0 ? void 0 : searchButton.addEven
             }
             let botao = document.createElement("button");
             botao.textContent = "Favoritar";
-            let paiDoBotao = botao.parentNode;
             botao.addEventListener("click", function () {
                 let select = this.previousElementSibling;
                 let value = select === null || select === void 0 ? void 0 : select.options[select.selectedIndex].value;
                 adicionarFilmeNaLista(item.id, value);
             });
-            li.appendChild(selectLista);
-            li.appendChild(botao);
+            let menu = document.createElement("div");
+            menu.id = "menu-div";
+            menu.appendChild(selectLista);
+            menu.appendChild(botao);
+            li.appendChild(menu);
         }
         ul.appendChild(li);
     }
@@ -172,7 +174,7 @@ function criarRequestToken() {
 }
 function aprovaToken() {
     return __awaiter(this, void 0, void 0, function* () {
-        window.open("https://www.themoviedb.org/authenticate/" + requestToken);
+        https: window.open("https://www.themoviedb.org/authenticate/" + requestToken);
     });
 }
 function criarSessao() {

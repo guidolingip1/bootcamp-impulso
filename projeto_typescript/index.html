@@ -5,22 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="desafio4.js" defer></script>
+    <script src="app.js" defer></script>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="container">
-      <div class="login_area">
-        <h1 id="login-text">Login</h1>
-        <input id="api-key" placeholder="Api Key" onchange="preencherApi(event)" />
-        <button id="validate-button">Validar Token</button>
-        <button id="login-button" disabled>Login</button>
-        <button id="myLists-button">Minhas Listas</button>
+      <div class="left-area">
+        <div class="login-area">
+          <h1 id="login-text">Login</h1>
+          <input id="api-key" placeholder="Api Key" onchange="preencherApi(event)" />
+          <button id="validate-button">Validar Token</button>
+          <button id="login-button" disabled>Login</button>
+        </div>
+        <div class="actions-area">
+          <h1 id="actions-text">Actions</h1>
+          <button id="myLists-button">Ver Listas</button>
+          <button id="createList-button">Criar Lista</button>
+        </div>
       </div>
       <div id="search-container">
-        <input id="search" placeholder="Pesquise um filme" />
-        <button id="search-button">Pesquisar</button>
-        <label for="username" id="username-label"></label>
+        <div class="searchbar">
+          <input id="search" placeholder="Pesquise um filme" />
+          <button id="search-button">Pesquisar</button>
+        </div>
       </div>
     </div>
   </body>

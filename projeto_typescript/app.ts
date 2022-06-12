@@ -65,7 +65,6 @@ searchButton?.addEventListener("click", async () => {
 
       let botao = document.createElement("button");
       botao.textContent = "Favoritar";
-      let paiDoBotao = botao.parentNode;
 
       botao.addEventListener("click", function () {
         let select = this.previousElementSibling as HTMLSelectElement;
@@ -73,8 +72,11 @@ searchButton?.addEventListener("click", async () => {
         adicionarFilmeNaLista(item.id, value);
       });
 
-      li.appendChild(selectLista);
-      li.appendChild(botao);
+      let menu = document.createElement("div");
+      menu.id = "menu-div";
+      menu.appendChild(selectLista);
+      menu.appendChild(botao);
+      li.appendChild(menu);
     }
     ul.appendChild(li);
   }
@@ -186,7 +188,7 @@ async function criarRequestToken() {
 }
 
 async function aprovaToken() {
-  window.open("https://www.themoviedb.org/authenticate/" + requestToken);
+  https: window.open("https://www.themoviedb.org/authenticate/" + requestToken);
 }
 
 async function criarSessao() {

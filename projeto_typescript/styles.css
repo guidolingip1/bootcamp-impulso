@@ -16,9 +16,17 @@ body {
   display: flex;
 }
 
-.login_area {
+.left-area {
+  height: 640px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.login-area,
+.actions-area {
   width: 300px;
-  height: 400px;
+  height: 300px;
 
   display: flex;
   flex-direction: column;
@@ -29,12 +37,11 @@ body {
   border-radius: 20px;
   color: var(--secondary-color);
 }
-#login-text {
+#login-text,
+#actions-text {
   margin-top: 20px;
 }
 
-#login,
-#senha,
 #api-key {
   width: 240px;
   height: 25px;
@@ -51,7 +58,8 @@ body {
 
 #login-button,
 #myLists-button,
-#validate-button {
+#validate-button,
+#createList-button {
   width: 120px;
   height: 30px;
   background-color: var(--secondary-color);
@@ -69,7 +77,8 @@ body {
 }
 #login-button:hover,
 #myLists-button:hover,
-#validate-button:hover {
+#validate-button:hover,
+#createList-button:hover {
   opacity: 0.8;
   cursor: pointer;
 }
@@ -103,8 +112,9 @@ body {
   color: #f3f3f3;
 }
 
-#search-button:hover {
-  opacity: 0.8;
+#search-button:hover,
+#criarListaContainer-button:hover {
+  opacity: 0.6;
   cursor: pointer;
 }
 
@@ -116,11 +126,75 @@ body {
 
 #lista li {
   height: 36px;
+  width: 800px;
   font-size: 20px;
   color: #f3f3f3;
   font-weight: bold;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 #lista li button {
   margin-left: 30px;
+}
+
+.list-container {
+  margin-left: 100px;
+}
+
+#criarListaContainer {
+  margin-top: 40px;
+  width: 250px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+#criarListaContainer-title {
+  color: white;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+#criarListaContainer-inputName {
+  height: 24px;
+  margin-bottom: 14px;
+  border-radius: 22px;
+  border: 2px solid var(--secondary-color);
+
+  text-align: center;
+  color: #776bcc;
+  outline-color: #bab1ff;
+}
+
+#criarListaContainer-inputDescription {
+  height: 80px;
+  margin-bottom: 14px;
+  border-radius: 22px;
+  border: 2px solid var(--secondary-color);
+
+  text-align: center;
+  color: #776bcc;
+  outline-color: #bab1ff;
+}
+
+#criarListaContainer-button {
+  width: 100px;
+  height: 30px;
+  margin-left: 75px;
+  background-color: #6654eb86;
+  border-radius: 22px;
+  border: 1px solid white;
+
+  text-align: center;
+  color: #f3f3f3;
+}
+
+#menu-div {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  float: right;
 }
