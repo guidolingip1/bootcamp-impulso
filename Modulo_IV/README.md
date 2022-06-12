@@ -126,3 +126,89 @@ A API do websocket roda por cima do HTTP, criando uma conexão BIDIRECIONAL entr
   - Endereçamento e protocolo
   - Camada
   - Encerramento do Handshake
+
+# 🚀 Introdução ao ReactJS
+
+## 👩‍💻 O que é React
+
+- React é uma biblioteca JavaScript para criar UI.
+- Foi criada em 2011 por Jordan Walke no FB
+
+### Como configurar o react
+
+- npm create-react-app
+- Pode ser feita na mão a instalação
+
+### O que é JSX
+
+É uma sintax sugar para React.createElement
+
+- O browser não interpreta o JSX, é necessário um transpilador (no caso o utilizado é o Babel)
+
+### O que são Componentes e Props
+
+- Componente é uma parte que será reutiliza, (menu, botao ...)
+- Props são os propriedades que passamos para um componente
+
+# 🚀 Desenvolvimento de aplicações para internet com ReactJS
+
+## 👩‍💻 Estilos
+
+Os estilos em React podem ser feitos das seguintes formas
+
+- Inline
+- CSS separado
+- props
+
+## 👩‍💻 Introdução ao Redux e fluxos de arquitetura com ReactJS
+
+### O que é flux
+
+Flux é uma arquitetura criada pelo facebook para comunicação entre componentes
+
+- Arquitetura do flux
+
+  - Action: Quando um estado precisa ser alterado é ela quem formata a mensagem.
+  - Dispatcher: Dispatcher é o cara que a partir da mensagem da action determina qual store vai receber essa mensagem.
+  - Store: Ela guarda todos os estados e é ela quem altera os estados
+  - View: View é como um gerente intermediario, é Como se fosse um Middleware entre a Store e a Tela, é ela quem recebe as ordens da store e pede que o DOM faça as modificações
+
+  ### Redux
+
+  - Single source of truth: Uma única store
+  - State é read only
+  - Mudanças são feitas com pure functions
+
+- Em Redux
+
+  - Actions: As actions no redux são como as do flux, porém elas não enviam uma action pro dispatcher, elas retornam um objeto de action formatado
+  - Store: A store cuida de toda árvore de estados e os reducers vão saber qual estado que muda
+  - Reducers: São responsáveis por determinar qual estado vai mudar
+  - Views: Provider, Connect, select
+
+    O vDOM só vai fazer o UPDATE quando houver uma alteração em um componente
+
+## 👩‍💻 Comunicação avançada entre aplicações
+
+### Rest HTTP com react
+
+Podemos usar o fetch, axios ou outras
+
+- GET
+- POST
+- PUT
+- DELETE
+
+## 👩‍💻 Conceitos de qualidade de código e automação de testes em React
+
+### TDD - Test-Driven Development
+
+Tem por objetivo escrever um código que testa seu próprio código.
+
+- Teste Unitário: Teste de uma unica funcionalidade
+- Teste End-to-End (E2E): Aplicação completa
+
+As bibliotecas mais comuns são:
+
+- Jest
+- Rect-testing-library
