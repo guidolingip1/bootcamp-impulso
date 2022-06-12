@@ -4,7 +4,7 @@
 
 ## Meu andamento
 
-![49%](https://progress-bar.dev/49)
+![63%](https://progress-bar.dev/63)
 </br>
 
 <details>
@@ -59,9 +59,9 @@
 <details>
   <summary>[] Módulo IV - Front-end: Desenvolvimento Web com React</Summary>
   
-  - [] Conhecendo os Principais Protocolos de Comunicação da Internet
-  - [] Introdução ao ReactJS
-  - [] Desenvolvimento de aplicações para internet com ReactJS
+  - [✔] Conhecendo os Principais Protocolos de Comunicação da Internet
+  - [✔] Introdução ao ReactJS
+  - [✔] Desenvolvimento de aplicações para internet com ReactJS
   - [] Introdução aos React Hooks
   - [] Trabalhando com States & Effects no ReactJs
   - [] Práticas avançadas em projetos com ReactJS
