@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import bgImg from "../../images/bg.jpeg";
+import bgImg from "../images/bg.jpeg";
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -8,6 +8,5 @@ export const GlobalStyle = createGlobalStyle`
     color: #332c36;
     padding: 0;
     margin: 0;
-    font-family: 'New Tegomin', serif;
   }
 `;
