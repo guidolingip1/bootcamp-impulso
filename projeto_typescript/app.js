@@ -8,17 +8,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-let apiKey = "5703b8e437fb5317da32c17cc2116716";
+let apiKey;
 let requestToken;
 let sessionId;
 let listId;
 let accountId;
-let accessToken;
 let listaDeFilmes;
 /** REFERENCIAS */
 let loginButton = document.getElementById("login-button");
 let searchButton = document.getElementById("search-button");
+let createListButton = document.getElementById("createList-button");
 let searchContainer = document.getElementById("search-container");
+let listContainer = document.getElementById("list-container");
 let searchBar = document.getElementById("search");
 let logoutButton = document.getElementById("logout-button");
 let myListsButton = document.getElementById("myLists-button");
@@ -30,13 +31,20 @@ validateButton === null || validateButton === void 0 ? void 0 : validateButton.a
 }));
 loginButton === null || loginButton === void 0 ? void 0 : loginButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
     yield criarSessao();
-    yield geraAccessToken();
     yield pegaId();
 }));
 searchButton === null || searchButton === void 0 ? void 0 : searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
     let lista = document.getElementById("lista");
+    let criarList = document.getElementById("criarListaContainer");
+    let listas;
+    if (sessionId) {
+        listas = yield pegarListas();
+    }
     if (lista) {
         lista.outerHTML = "";
+    }
+    if (criarList) {
+        searchContainer.removeChild(criarList);
     }
     let query = searchBar.value;
     let listaDeFilmes = yield procurarFilme(query);
@@ -45,18 +53,79 @@ searchButton === null || searchButton === void 0 ? void 0 : searchButton.addEven
     for (const item of listaDeFilmes.results) {
         let li = document.createElement("li");
         li.appendChild(document.createTextNode(item.original_title));
+        if (sessionId) {
+            let selectLista = document.createElement("select");
+            selectLista.id = "selectLista";
+            for (const i of listas.results) {
+                let opcao = document.createElement("option");
+                opcao.innerHTML = i.name;
+                opcao.value = i.id;
+                selectLista.appendChild(opcao);
+            }
+            let botao = document.createElement("button");
+            botao.textContent = "Favoritar";
+            let paiDoBotao = botao.parentNode;
+            botao.addEventListener("click", function () {
+                let select = this.previousElementSibling;
+                let value = select === null || select === void 0 ? void 0 : select.options[select.selectedIndex].value;
+                adicionarFilmeNaLista(item.id, value);
+            });
+            li.appendChild(selectLista);
+            li.appendChild(botao);
+        }
+        ul.appendChild(li);
+    }
+    searchContainer.appendChild(ul);
+    console.log("Lista results: " + listas.results);
+    console.log(listas);
+}));
+myListsButton === null || myListsButton === void 0 ? void 0 : myListsButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
+    let lista = document.getElementById("lista");
+    let criarList = document.getElementById("criarListaContainer");
+    if (lista) {
+        lista.outerHTML = "";
+    }
+    if (criarList) {
+        searchContainer.removeChild(criarList);
+    }
+    let listaDeListas = yield pegarListas();
+    let ul = document.createElement("ul");
+    ul.id = "lista";
+    for (const item of listaDeListas.results) {
+        let li = document.createElement("li");
+        li.appendChild(document.createTextNode(item.name));
+        /* Button VER LISTA*/
         let botao = document.createElement("button");
-        botao.textContent = "Favoritar";
+        botao.textContent = "Ver Lista";
+        botao === null || botao === void 0 ? void 0 : botao.addEventListener("click", () => pegaListaAtualEPopula(item.id));
+        /* */
         li.appendChild(botao);
         ul.appendChild(li);
     }
     searchContainer.appendChild(ul);
-    console.log(listaDeFilmes.results);
-    console.log(listaDeFilmes);
+    console.log(listaDeListas.results);
 }));
-myListsButton === null || myListsButton === void 0 ? void 0 : myListsButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
-    pegarListas();
+createListButton === null || createListButton === void 0 ? void 0 : createListButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
+    criarListaInterface();
 }));
+function pegaListaAtualEPopula(listId) {
+    return __awaiter(this, void 0, void 0, function* () {
+        let lista = document.getElementById("lista");
+        if (lista) {
+            lista.outerHTML = "";
+        }
+        let listaAtual = yield pegarLista(listId);
+        let ul = document.createElement("ul");
+        ul.id = "lista";
+        for (const item of listaAtual.items) {
+            let li = document.createElement("li");
+            li.appendChild(document.createTextNode(item.title));
+            ul.appendChild(li);
+        }
+        searchContainer.appendChild(ul);
+        console.log(listaAtual);
+    });
+}
 function pegaId() {
     return __awaiter(this, void 0, void 0, function* () {
         const req = yield fetch(`https://api.themoviedb.org/3/account?api_key=${apiKey}&session_id=${sessionId}`, {
@@ -71,7 +140,7 @@ function pegaId() {
     });
 }
 function preencherApi() {
-    //apiKey = (document.getElementById("api-key") as HTMLInputElement).value;
+    apiKey = document.getElementById("api-key").value;
     validateLoginButton();
 }
 function validateLoginButton() {
@@ -86,7 +155,7 @@ function validateLoginButton() {
         }
     }
 }
-/** Authentication */
+/** AUTHENTICATION */
 function criarRequestToken() {
     return __awaiter(this, void 0, void 0, function* () {
         const req = yield fetch(`https://api.themoviedb.org/3/authentication/token/new?api_key=${apiKey}`, {
@@ -106,24 +175,6 @@ function aprovaToken() {
         window.open("https://www.themoviedb.org/authenticate/" + requestToken);
     });
 }
-function geraAccessToken() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const req = yield fetch(`https://api.themoviedb.org/4/auth/access_token`, {
-            method: "POST",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${accessToken}`,
-            },
-            body: JSON.stringify({
-                request_token: requestToken,
-            }),
-        });
-        const json = yield req.json();
-        accessToken = json.access_token;
-        console.log("Access_token: " + json.access_token);
-    });
-}
 function criarSessao() {
     return __awaiter(this, void 0, void 0, function* () {
         const req = yield fetch(`https://api.themoviedb.org/3/authentication/session/new?api_key=${apiKey}&request_token=${requestToken}`, {
@@ -137,10 +188,46 @@ function criarSessao() {
         console.log("Minha session: " + json.session_id);
     });
 }
+/** END AUTHENTICATION */
+function criarListaInterface() {
+    return __awaiter(this, void 0, void 0, function* () {
+        let lista = document.getElementById("lista");
+        if (lista) {
+            lista.outerHTML = "";
+        }
+        if (searchContainer.querySelector("#criarListaContainer") === null) {
+            let criarListaContainer = document.createElement("div");
+            criarListaContainer.id = "criarListaContainer";
+            let title = document.createElement("h1");
+            title.id = "criarListaContainer-title";
+            title.innerHTML = "Criar Lista";
+            let inputName = document.createElement("input");
+            inputName.id = "criarListaContainer-inputName";
+            inputName.placeholder = "Nome da lista";
+            inputName.type = "text";
+            let inputDescription = document.createElement("input");
+            inputDescription.id = "criarListaContainer-inputDescription";
+            inputDescription.placeholder = "Descrição da lista";
+            inputDescription.type = "text";
+            let button = document.createElement("Button");
+            button.id = "criarListaContainer-button";
+            button.innerHTML = "Criar Lista";
+            button.addEventListener("click", () => criarLista(inputName.value, inputDescription.value));
+            criarListaContainer.appendChild(title);
+            criarListaContainer.appendChild(inputName);
+            criarListaContainer.appendChild(inputDescription);
+            criarListaContainer.appendChild(button);
+            searchContainer.appendChild(criarListaContainer);
+        }
+    });
+}
 function criarLista(nomeDaLista, descricao) {
     return __awaiter(this, void 0, void 0, function* () {
         const req = yield fetch(`https://api.themoviedb.org/3/list?api_key=${apiKey}&session_id=${sessionId}`, {
             method: "POST",
+            headers: {
+                "Content-Type": "application/json;charset=utf-8",
+            },
             body: JSON.stringify({
                 name: nomeDaLista,
                 description: descricao,
@@ -151,14 +238,18 @@ function criarLista(nomeDaLista, descricao) {
 }
 function adicionarFilmeNaLista(filmeId, listaId) {
     return __awaiter(this, void 0, void 0, function* () {
-        let result = yield HttpClient.get({
-            url: `https://api.themoviedb.org/3/list/${listaId}/add_item?api_key=${apiKey}&session_id=${sessionId}`,
+        console.log(filmeId + " " + listaId);
+        const req = yield fetch(`https://api.themoviedb.org/3/list/${listaId}/add_item?api_key=${apiKey}&session_id=${sessionId}`, {
             method: "POST",
-            body: {
-                media_id: filmeId,
+            headers: {
+                "Content-Type": "application/json;charset=utf-8",
             },
+            body: JSON.stringify({
+                media_id: filmeId,
+            }),
         });
-        console.log(result);
+        const res = yield req.json();
+        console.log("Respostaaaaaa: " + JSON.stringify(res));
     });
 }
 function pegarListas() {
@@ -171,25 +262,22 @@ function pegarListas() {
             },
         });
         const json = yield req.json();
-        console.log("Minhas listas: " + JSON.stringify(json));
+        console.log("AQUI ESTAO AS LISTAS: " + JSON.stringify(json));
+        return json;
     });
 }
-function pegarLista() {
+function pegarLista(listId) {
     return __awaiter(this, void 0, void 0, function* () {
-        let result = yield HttpClient.get({
-            url: `https://api.themoviedb.org/3/list/${listId}?api_key=${apiKey}`,
+        const req = yield fetch(`https://api.themoviedb.org/3/list/${listId}?api_key=${apiKey}`, {
             method: "GET",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
         });
-        console.log(result);
-    });
-}
-function adicionarFilme(filmeId) {
-    return __awaiter(this, void 0, void 0, function* () {
-        let result = yield HttpClient.get({
-            url: `https://api.themoviedb.org/3/movie/${filmeId}?api_key=${apiKey}&language=en-US`,
-            method: "GET",
-        });
-        console.log(result);
+        const json = yield req.json();
+        console.log("Minha listaaaa: " + JSON.stringify(json));
+        return json;
     });
 }
 function procurarFilme(query) {
