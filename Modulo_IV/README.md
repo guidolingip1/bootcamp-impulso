@@ -49,6 +49,5 @@ Responses
 
 ### Para que servem cookies e cache
 
-Cookies são pequenos blocos de dados criados e utilizados pelo servidor para persistir dados no dispositivo do cliente.
-Onde ficam esses cookies?
-Esses cookies ficam dentro do headerfile
+Cookies são pequenos blocos de dados criados e utilizados pelo servidor para persistir dados no dispositivo do cliente.\
+Onde ficam esses cookies? Esses cookies ficam dentro do headerfile
