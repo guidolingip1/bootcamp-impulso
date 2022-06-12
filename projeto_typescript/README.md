@@ -16,4 +16,4 @@ Fiz a risca o que foi pedido.
 
 # Resultado
 
-![projeto](https://github.com/guidolingip1/bootcamp-impulso/blob/master/projeto_typescript/resultado.gif)
+![projeto](https://github.com/guidolingip1/bootcamp-impulso/blob/master/projeto_typescript/resultado2.gif)
