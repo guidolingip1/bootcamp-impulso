@@ -13,7 +13,12 @@
       <div class="left-area">
         <div class="login-area">
           <h1 id="login-text">Login</h1>
-          <input id="api-key" placeholder="Api Key" onchange="preencherApi(event)" />
+          <input
+            id="api-key"
+            placeholder="Api Key"
+            onchange="preencherApi(event)"
+            autocomplete="off"
+          />
           <button id="validate-button">Validar Token</button>
           <button id="login-button" disabled>Login</button>
         </div>
@@ -25,7 +30,7 @@
       </div>
       <div id="search-container">
         <div class="searchbar">
-          <input id="search" placeholder="Pesquise um filme" />
+          <input id="search" placeholder="Pesquise um filme" autocomplete="off" />
           <button id="search-button">Pesquisar</button>
         </div>
       </div>
