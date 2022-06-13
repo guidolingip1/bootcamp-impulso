@@ -62,7 +62,7 @@
   - [✔] Conhecendo os Principais Protocolos de Comunicação da Internet
   - [✔] Introdução ao ReactJS
   - [✔] Desenvolvimento de aplicações para internet com ReactJS
-  - [] Introdução aos React Hooks
+  - [✔] Introdução aos React Hooks
   - [] Trabalhando com States & Effects no ReactJs
   - [] Práticas avançadas em projetos com ReactJS
   - [] Criando um front-end totalmente componentizado na prática com ReactJS
