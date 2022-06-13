@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { string } from "prop-types";
 import { Button } from "../Button/Button";
 
-export const Quotes = ({ quote, speaker }) => {
+export const Quotes = ({ quote, speaker, onUpdate }) => {
   return (
     <Wrapper>
       <Quote>{quote}</Quote>
       <Speaker>- {speaker}</Speaker>
-      <Button>Quote No Justu</Button>
+      <Button onClick={onUpdate}>Quote No Justu</Button>
     </Wrapper>
   );
 };
