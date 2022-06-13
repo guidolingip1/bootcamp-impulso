@@ -5,6 +5,8 @@ import { getQuote } from "./quotesService";
 
 
 const response = {test: 'testing'};
+const response2 = {test: 'testing2'};
+
 const server = setupServer(
     rest.get('http://127.0.0.1:3000', (req, res, ctx) => {
         return res(ctx.json(response))
