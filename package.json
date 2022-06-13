@@ -1,0 +1,22 @@
+{
+  "name": "bootcamp-impulso",
+  "version": "1.0.0",
+  "description": "![Impulso Icone](https://github.com/guidolingip1/bootcamp-impulso/blob/master/impulso.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guidolingip1/bootcamp-impulso.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guidolingip1/bootcamp-impulso/issues"
+  },
+  "homepage": "https://github.com/guidolingip1/bootcamp-impulso#readme",
+  "dependencies": {
+    "styled-components": "^5.3.5"
+  }
+}
