@@ -1,0 +1,40 @@
+.madeby {
+  margin-top: 12px;
+  height: 30px;
+  border-radius: 12px;
+  border: 1px solid #fdfdfd;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07),
+    0 32px 64px rgba(0, 0, 0, 0.07);
+  text-align: center;
+  line-height: 30px;
+  background-color: #ffffff;
+}
+
+.madeby a {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  color: #000000;
+  text-decoration: none;
+}
+.madeby .fa {
+  color: #e90606;
+  margin: 0 3px;
+  font-size: 14px;
+  animation: pound 0.35s infinite alternate;
+  -webkit-animation: pound 0.35s infinite alternate;
+}
+
+@-webkit-keyframes pound {
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes pound {
+  to {
+    transform: scale(1.1);
+  }
+}
