@@ -212,3 +212,77 @@ As bibliotecas mais comuns são:
 
 - Jest
 - Rect-testing-library
+
+## 👩‍💻 Trabalhando com States e Effects no ReactJS
+
+### O que são React Hook
+
+Hooks são funções que permitem a você “ligar-se” aos recursos de state e ciclo de vida do React a partir de componentes funcionais.
+Sem Hook
+
+```javascript
+import React from "react";
+
+export function App(props) {
+  let counter = 10;
+
+  let contar = () => {
+    let counterDiv = document.getElementById("counter-div");
+    counterDiv.innerHTML = counter + 1;
+    counter++;
+  };
+
+  return (
+    <div className="App">
+      <h1 id="counter-div">{counter}</h1>
+      <button onClick={contar}>Clique</button>
+    </div>
+  );
+}
+```
+
+Com Hook
+
+```javascript
+import React from "react";
+import { useState } from "react";
+
+export function App(props) {
+  const [counter, setCount] = useState(1);
+
+  let contar = () => {
+    setCount(counter + 1);
+  };
+
+  return (
+    <div className="App">
+      <h1 id="counter-div">{counter}</h1>
+      <button onClick={contar}>Clique</button>
+    </div>
+  );
+}
+```
+
+## 👩‍💻 Aprofundamento sobre ciclo de vida do React
+
+### Ciclo de vida e suas fases
+
+- Inicialização
+- Montagem
+- Atualização
+- Desmontagem
+
+### Error Boundaries
+
+- Manipuladores de evento
+- Código Assíncrono
+- Renderização no Servidor
+- Erros Lançados na propria error boundary (ao invés de em seus filhos)
+
+### Render props
+
+Já vimos em outras aulas
+
+### Typechecking
+
+Prefiro usar typescript
