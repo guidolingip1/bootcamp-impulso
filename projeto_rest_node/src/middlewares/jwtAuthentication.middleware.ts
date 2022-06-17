@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import ForbiddenError from "../models/errors/forbidden.error.model";
 import userRepository from "../repositories/user.repository";
 
-async function basicAuthenticationMiddleware(request: Request, response: Response, next: NextFunction) {
+async function jwtAuthenticationMiddleware(request: Request, response: Response, next: NextFunction) {
   try {
     const authorizationHeader = request.headers["authorization"];
 
@@ -38,4 +38,4 @@ async function basicAuthenticationMiddleware(request: Request, response: Respons
   } catch (error) {}
 }
 
-export default basicAuthenticationMiddleware;
+export default jwtAuthenticationMiddleware;
