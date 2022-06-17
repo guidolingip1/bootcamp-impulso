@@ -1,1 +1,1 @@
-## Basicamente só exercícios práticos e um projeto, o projeto ficará em uma pasta separada
+## Este módulo foi praticamente prático e resultou na pasta projeto_rest_node
