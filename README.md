@@ -4,7 +4,7 @@
 
 ## Meu andamento
 
-![93%](https://progress-bar.dev/93)
+![100%](https://progress-bar.dev/100)
 </br>
 
 <details>
@@ -13,7 +13,7 @@
   - [✔] Conheça as oportunidades da DIO
   - [✔] Seja protagonista neste Bootcamp
   - [✔] Boas-vindas ao Impulso JavaScript Evolution
-  - [] Mentoria #1: Impulso JavaScript Evolution | Aula Inaugural
+  - [✔] Mentoria #1: Impulso JavaScript Evolution | Aula Inaugural
 
 </details>
 
@@ -87,7 +87,7 @@
   - [✔]  Explorando o Estilo Arquitetural REST com Node.js
   - [✔] Node.js com Bancos de Dados Relacionais (SQL)
   - [✔] Microsserviços e Integrações com Node.js
-  - [] Criando uma API REST com Node.js e TypeORM
-  - [] Integrando um Backend em Node.js com um Frontend em React para um E-commerce
+  - [✔] Criando uma API REST com Node.js e TypeORM
+  - [✔] Integrando um Backend em Node.js com um Frontend em React para um E-commerce
 
 </details>
