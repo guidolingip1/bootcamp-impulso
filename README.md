@@ -8,7 +8,7 @@
 </br>
 
 <details>
-  <summary>[] Módulo 0 - Prepare-se para a jornada</summary>
+  <summary>[✔] Módulo 0 - Prepare-se para a jornada</summary>
   
   - [✔] Conheça as oportunidades da DIO
   - [✔] Seja protagonista neste Bootcamp
