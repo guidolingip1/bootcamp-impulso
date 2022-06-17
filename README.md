@@ -4,7 +4,7 @@
 
 ## Meu andamento
 
-![63%](https://progress-bar.dev/63)
+![93%](https://progress-bar.dev/93)
 </br>
 
 <details>
@@ -70,23 +70,23 @@
 </details>
 
 <details>
-  <summary>[] Módulo V - Bancos de Dados Relacionais (SQL) e Não Relacionais (NoSQL)</Summary>
+  <summary>[✔] Módulo V - Bancos de Dados Relacionais (SQL) e Não Relacionais (NoSQL)</Summary>
   
-  - [] Conceitos e melhores práticas com bancos de dados PostgreSQL
-  - [] Introdução ao MongoDB e Bancos de Dados NoSQL
+  - [✔] Conceitos e melhores práticas com bancos de dados PostgreSQL
+  - [✔] Introdução ao MongoDB e Bancos de Dados NoSQL
 
 </details>
 
 <details>
-  <summary>[] Módulo VI - Back-end: Criando API com Node.Js</Summary>
+  <summary>[✔] Módulo VI - Back-end: Criando API com Node.Js</Summary>
   
-  - [] Instalando e Configurando seu Ambiente Node.js
-  - [] Introdução ao Node.js com JavaScript
-  - [] Fundamentos de Node.js e Jest
-  - [] Pirâmide de Testes na Prática Explorando Jest e TDD
-  - []  Explorando o Estilo Arquitetural REST com Node.js
-  - [] Node.js com Bancos de Dados Relacionais (SQL)
-  - [] Microsserviços e Integrações com Node.js
+  - [✔] Instalando e Configurando seu Ambiente Node.js
+  - [✔] Introdução ao Node.js com JavaScript
+  - [✔] Fundamentos de Node.js e Jest
+  - [✔] Pirâmide de Testes na Prática Explorando Jest e TDD
+  - [✔]  Explorando o Estilo Arquitetural REST com Node.js
+  - [✔] Node.js com Bancos de Dados Relacionais (SQL)
+  - [✔] Microsserviços e Integrações com Node.js
   - [] Criando uma API REST com Node.js e TypeORM
   - [] Integrando um Backend em Node.js com um Frontend em React para um E-commerce
 
