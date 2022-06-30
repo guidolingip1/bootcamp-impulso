@@ -18,7 +18,12 @@ let getUserData = async (user) => {
     if (req.status !== 200) {
       return null;
     }
+
     const res = await req.json();
+    if (res.public_repos === 0 && res.following === 0 && res.followers === 0) {
+      return null;
+    }
+
     return res;
   } catch (error) {
     console.log(error);
@@ -38,6 +43,10 @@ let getUserRepos = async (user) => {
     }
 
     const res = await req.json();
+    if (Object.keys(res).length === 0) {
+      return null;
+    }
+
     return res;
   } catch (error) {
     console.log(error);
@@ -80,13 +89,7 @@ function App() {
         <div className="profile-content">
           <div>
             <div className="search">
-              <input
-                type="text"
-                className="searchbar"
-                id="searchbar"
-                placeholder="Search"
-                autoComplete="off"
-              />
+              <input type="text" className="searchbar" id="searchbar" placeholder="Search" autoComplete="off" />
               <button className="search-button" onClick={handleButton}>
                 Search
               </button>

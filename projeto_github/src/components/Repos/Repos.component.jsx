@@ -3,9 +3,7 @@ import "./Repos.styles.css";
 export const Repos = ({ repos }) => {
   return (
     <div className="repos-container">
-      <p className="repos-container-title">
-        {repos ? "Repositories from " + repos[0].owner.login : ""}
-      </p>
+      <p className="repos-container-title">{repos ? "Repositories from " + repos[0].owner.login : ""}</p>
       {repos?.map((item) => {
         return (
           <div className="repo-item" key={item.id}>
